@@ -27,4 +27,4 @@ def new_key_value(d:dict):
     new={country:capital}
     countries_dict.update(new)
     print(countries_dict)
-    return d,new
+    return d,new.
