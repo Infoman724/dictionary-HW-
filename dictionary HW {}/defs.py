@@ -1,5 +1,5 @@
-
-countries_dict={'Albaaniar':'Tirana', 'Andorra':'Andorra-la-Vella', 'Armeenia':'Jerevan', 'Aserbaidjaan':'Bakuu', 'Austria':'Viin', 'Belgia':'Brussel', 'Bosnia-ja-Hertsegoviina':'Sarajevo', 'Bulgaaria':'Sofia', 'Eesti':'Tallinn', 'Gruusia':'Thbilisi', 'Hispaania':'Madrid', 'Horvaatia':'Zagreb', 'Iirimaa':'Dublin', 'Island':'Reykjavk', 'Itaalia':'Rooma', 'Kasahstan':'Astana', 'Kreeka':'Ateena', 'Kupros':'Nikosia', 'Leedu':'Vilnius', 'Liechtenstein':'Vaduz', 'Luksemburg':'Luxembourg', 'Lati':'Riia', 'Madalmaad':'Amsterdam', 'Makedoonia':'Skopje', 'Malta':'Valletta', 'Moldova':'Chisinau', 'Monaco':'Monaco', 'Montenegro':'Podgorica', 'Norra':'Oslo', 'Poola':'Varssavi', 'Portugal':'Lissabon', 'Prantsusmaa':'Pariis', 'Rootsi':'Stockholm', 'Rumeenia':'Bukarest', 'Saksamaa':'Berliin', 'San-Marino':'San-Marino', 'Serbia':'Belgrad', 'Slovakkia':'Bratislava', 'Sloveenia':'Ljubljana', 'Soome':'Helsingi', 'Suurbritannia':'London', 'Dveits':'Bern', 'Taani':'Kopenhaagen', 'Tbehhi':'Praha', 'Turgi':'Ankara', 'Ukraina':'Kiiev', 'Ungari':'Budapest', 'Valgevene':'Minsk', 'Vatikan':'Vatican', 'Venemaa':'Moskva'}
+import random
+stranb={'Albaaniar':'Tirana', 'Andorra':'Andorra-la-Vella', 'Armeenia':'Jerevan', 'Aserbaidjaan':'Bakuu', 'Austria':'Viin', 'Belgia':'Brussel', 'Bosnia-ja-Hertsegoviina':'Sarajevo', 'Bulgaaria':'Sofia', 'Eesti':'Tallinn', 'Gruusia':'Thbilisi', 'Hispaania':'Madrid', 'Horvaatia':'Zagreb', 'Iirimaa':'Dublin', 'Island':'Reykjavk', 'Itaalia':'Rooma', 'Kasahstan':'Astana', 'Kreeka':'Ateena', 'Kupros':'Nikosia', 'Leedu':'Vilnius', 'Liechtenstein':'Vaduz', 'Luksemburg':'Luxembourg', 'Lati':'Riia', 'Madalmaad':'Amsterdam', 'Makedoonia':'Skopje', 'Malta':'Valletta', 'Moldova':'Chisinau', 'Monaco':'Monaco', 'Montenegro':'Podgorica', 'Norra':'Oslo', 'Poola':'Varssavi', 'Portugal':'Lissabon', 'Prantsusmaa':'Pariis', 'Rootsi':'Stockholm', 'Rumeenia':'Bukarest', 'Saksamaa':'Berliin', 'San-Marino':'San-Marino', 'Serbia':'Belgrad', 'Slovakkia':'Bratislava', 'Sloveenia':'Ljubljana', 'Soome':'Helsingi', 'Suurbritannia':'London', 'Dveits':'Bern', 'Taani':'Kopenhaagen', 'Tbehhi':'Praha', 'Turgi':'Ankara', 'Ukraina':'Kiiev', 'Ungari':'Budapest', 'Valgevene':'Minsk', 'Vatikan':'Vatican', 'Venemaa':'Moskva'}
     
 def countries(d:dict, v:int):
     keys_list=(list(d.keys()))
@@ -25,6 +25,20 @@ def new_key_value(d:dict):
     country=(input("Введите страну: ")).capitalize()
     capital=(input("Введите столицу: ")).capitalize()
     new={country:capital}
-    countries_dict.update(new)
-    print(countries_dict)
-    return d,new.
+    stranb.update(new)
+    print(stranb)
+    return d,new
+
+
+def mistake(d:dict):
+    print("В каком слове ошибка?, напишите название страны и новую столицу")
+    s=input()
+    del stranb[s]
+    print(stranb)
+    new_key_value(stranb)
+    return d
+
+def hui(d:dict):
+    print()
+    s=random.choice(list(d.keys()))
+    print(s)
