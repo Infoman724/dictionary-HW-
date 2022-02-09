@@ -14,7 +14,7 @@ while True:
         mistake(stranb)
 
     elif menu=="4":
-        hui(stranb)
+        test(stranb)
 
     elif menu=="5":
         print(stranb)

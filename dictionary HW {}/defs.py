@@ -5,7 +5,6 @@ for line in file:
     k,v=line.strip().split(":")
     stranb[k.strip()]=v.strip()
    
-    
 
     
 def countries(d:dict, v:int):
@@ -29,23 +28,49 @@ def countries(d:dict, v:int):
 
 def new_key_value(d:dict):
     new={}
+    a=""
     country=(input("Введите страну: ")).capitalize()
     capital=(input("Введите столицу: ")).capitalize()
+    a += str(country) + ":" + str(capital)
     new={country:capital}
     stranb.update(new)
+    file=open("rig-pea.txt","a")
+    file.write("\n"+a)
     print(stranb)
     return d,new
 
 
 def mistake(d:dict):
-    print("В каком слове ошибка?, напишите название страны и новую столицу")
+    print("В какой стране ошибка?, напишите название страны и новую столицу")
     s=input()
     del stranb[s]
     print(stranb)
-    new_key_value(stranb)
-    return d
+    str(new_key_value(stranb))
+    return d,a
 
-def hui(d:dict):
-    print()
-    s=random.choice(list(d.keys()))
-    print(s)
+def test(d:dict):
+    score = 0
+    list=[]
+    for element in stranb.keys():
+        list.append(element)
+    for vopros in range(11):
+        rnd_element = random.sample(list,1)[0]
+        print(rnd_element)
+        vast = input("Ответ= ")
+        vopros += 1
+        if vast == stranb[rnd_element]:
+            print("Правильный ответ")
+            score = score+1
+        else:
+            print("Не правильный ответ")
+    print("Смотрим результаты?")
+    print("1-da,2-net")
+    vastvast=int(input("Введите ваш ответ= "))
+    if vastvast not in [1,2]:
+        print("Пожалуйста выбирайте среди данных вариантов!")
+    else:
+        if vastvast==1:
+            results=((score/11)*100)
+            print("Ваше знание столиц и стран ровняется",results,"%")
+        else:
+            print("Спасибо что воспользовались")
