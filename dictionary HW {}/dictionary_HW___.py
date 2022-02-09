@@ -6,18 +6,18 @@ while True:
     menu=input()
     if menu=="1":
         v=input("Будем искать страну по стoлице(1) или стoлицу по названию(2)? ")
-        countries(countries_dict,v)
+        countries(stranb,v)
     elif menu=="2":
-        new_key_value(countries_dict)
+        new_key_value(stranb)
 
     elif menu=="3":
-        mistake(countries_dict)
+        mistake(stranb)
 
     elif menu=="4":
         hui(stranb)
 
     elif menu=="5":
-        print(countries_dict)
+        print(stranb)
 
     elif menu=="6":
         print("Спасибо что воспользовались нашими услугами")
